@@ -58,7 +58,7 @@ export async function POST(request: NextRequest) {
   // Simulate conflict check outcome
   const conflictFlags = body.opposingParty
     ? ["Smith Industries", "Acme Global", "Pinnacle Corp"].some((name) =>
-        body.opposingParty.toLowerCase().includes(name.toLowerCase())
+        body.opposingParty!.toLowerCase().includes(name.toLowerCase())
       )
     : false;
 
