@@ -133,7 +133,7 @@ export default function PracticeAreasPage() {
       {/* Practice detail accordion */}
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4 md:px-6">
-          <Accordion type="single" collapsible className="space-y-4">
+          <Accordion className="space-y-4">
             {practices.map((practice) => {
               const Icon = practice.icon;
               return (
@@ -194,14 +194,12 @@ export default function PracticeAreasPage() {
           </p>
           <div className="mt-6">
             <Button
-              asChild
               size="lg"
               className="bg-amber-600 hover:bg-amber-700 text-white"
+              render={<Link href="/contact" />}
             >
-              <Link href="/contact">
-                Schedule a Free Consultation
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
+              Schedule a Free Consultation
+              <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
           </div>
         </div>

@@ -7,7 +7,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { ArrowRight, Linkedin, Mail, Phone } from "lucide-react";
+import { ArrowRight, Mail, Phone } from "lucide-react";
 import Link from "next/link";
 
 const attorneys = [
@@ -154,14 +154,12 @@ export default function AttorneysPage() {
           </p>
           <div className="mt-6">
             <Button
-              asChild
               size="lg"
               className="bg-amber-600 hover:bg-amber-700 text-white"
+              render={<Link href="/contact" />}
             >
-              <Link href="/contact">
-                Get Matched With an Attorney
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
+              Get Matched With an Attorney
+              <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
           </div>
         </div>
