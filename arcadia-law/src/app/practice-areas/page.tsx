@@ -114,26 +114,27 @@ export default function PracticeAreasPage() {
   return (
     <div className="flex flex-col">
       {/* Hero */}
-      <section className="bg-gradient-to-br from-zinc-950 via-slate-900 to-zinc-900 py-16 md:py-24">
-        <div className="container mx-auto px-4 md:px-6">
-          <Badge className="mb-4 border-amber-600/40 bg-amber-600/10 text-amber-400 text-xs tracking-widest uppercase">
+      <section className="relative overflow-hidden bg-[oklch(0.08_0.03_255)] scan-line py-16 md:py-24">
+        <div className="absolute inset-0 grid-overlay opacity-30" />
+        <div className="container mx-auto px-4 md:px-6 relative z-10">
+          <Badge className="mb-4 border-accent/30 bg-accent/10 text-accent text-[11px] tracking-[0.2em] uppercase font-mono">
             What We Do
           </Badge>
           <h1 className="text-4xl font-bold tracking-tight text-white md:text-5xl">
             Practice Areas
           </h1>
-          <p className="mt-4 max-w-xl text-lg text-zinc-400">
+          <p className="mt-4 max-w-xl text-lg text-white/55 font-mono text-[15px]">
             Focused, sophisticated legal services across every major area of
             corporate law. Each practice is led by partners with deep
-            industry expertise and a track record of results.
+            industry expertise.
           </p>
         </div>
       </section>
 
       {/* Practice detail accordion */}
       <section className="py-16 md:py-24">
-        <div className="container mx-auto px-4 md:px-6">
-          <Accordion className="space-y-4">
+        <div className="container mx-auto px-4 md:px-6 max-w-4xl">
+          <Accordion type="single" collapsible className="space-y-4">
             {practices.map((practice) => {
               const Icon = practice.icon;
               return (
@@ -144,22 +145,22 @@ export default function PracticeAreasPage() {
                 >
                   <AccordionTrigger className="py-6 hover:no-underline">
                     <div className="flex items-start gap-4 text-left">
-                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-amber-600/10 text-amber-600">
+                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-border bg-muted text-accent">
                         <Icon className="h-5 w-5" />
                       </div>
                       <div>
-                        <h3 className="text-lg font-semibold">
+                        <h3 className="text-lg font-semibold text-primary">
                           {practice.title}
                         </h3>
-                        <p className="mt-1 text-sm text-muted-foreground">
+                        <p className="mt-1 text-sm text-muted-foreground font-mono text-[13px]">
                           {practice.summary}
                         </p>
                       </div>
                     </div>
                   </AccordionTrigger>
                   <AccordionContent className="pb-6">
-                    <div className="ml-14 border-l-2 border-amber-600/30 pl-6">
-                      <h4 className="mb-3 text-sm font-semibold uppercase tracking-wider text-muted-foreground">
+                    <div className="ml-14 border-l-2 border-accent/30 pl-6">
+                      <h4 className="mb-3 text-[11px] font-semibold uppercase tracking-[0.2em] text-muted-foreground font-mono">
                         Representative Services
                       </h4>
                       <ul className="space-y-2">
@@ -168,7 +169,7 @@ export default function PracticeAreasPage() {
                             key={detail}
                             className="flex items-start gap-2 text-sm text-muted-foreground"
                           >
-                            <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-amber-600/60" />
+                            <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent/60" />
                             {detail}
                           </li>
                         ))}
@@ -183,23 +184,31 @@ export default function PracticeAreasPage() {
       </section>
 
       {/* CTA */}
-      <section className="bg-muted/30 py-16">
+      <section className="bg-[oklch(0.12_0.03_255)] py-16">
         <div className="container mx-auto px-4 text-center md:px-6">
-          <h2 className="text-2xl font-bold tracking-tight md:text-3xl">
+          <h2 className="text-2xl font-bold tracking-tight text-white md:text-3xl">
             Not sure which practice fits your needs?
           </h2>
-          <p className="mt-3 text-muted-foreground max-w-lg mx-auto">
-            We&apos;ll listen to your situation and match you with the right
-            attorney. No charge, no pressure.
+          <p className="mt-3 text-white/55 max-w-lg mx-auto font-mono text-[15px]">
+            Take our 6-question match quiz and we&apos;ll recommend the right
+            team for your matter. No charge, no pressure.
           </p>
-          <div className="mt-6">
+          <div className="mt-6 flex flex-wrap justify-center gap-4">
             <Button
               size="lg"
-              className="bg-amber-600 hover:bg-amber-700 text-white"
-              render={<Link href="/contact" />}
+              className="bg-accent hover:bg-accent/90 text-accent-foreground shadow-lg"
+              render={<Link href="/attorney-match" />}
             >
-              Schedule a Free Consultation
+              Take the Match Quiz
               <ArrowRight className="ml-2 h-4 w-4" />
+            </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-white/20 text-white/70 hover:text-white hover:bg-white/5"
+              render={<Link href="/intake" />}
+            >
+              Begin Matter Intake
             </Button>
           </div>
         </div>
