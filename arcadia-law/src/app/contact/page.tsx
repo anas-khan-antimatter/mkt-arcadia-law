@@ -375,11 +375,10 @@ export default function ContactPage() {
                   <Button
                     variant="outline"
                     className="w-full border-amber-600/30 text-amber-700 hover:bg-amber-100"
-                    asChild
+                    render={<a href="tel:+12125550900" />}
                   >
-                    <a href="tel:+12125550900">
-                      <Phone className="mr-2 h-4 w-4" />
-                      Call (212) 555-0900
+                    <Phone className="mr-2 h-4 w-4" />
+                    Call (212) 555-0900
                     </a>
                   </Button>
                 </CardContent>
