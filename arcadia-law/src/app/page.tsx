@@ -109,22 +109,20 @@ export default function Home() {
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
               <Button
-                asChild
                 size="lg"
                 className="bg-amber-600 hover:bg-amber-700 text-white"
+                render={<Link href="/contact" />}
               >
-                <Link href="/contact">
-                  Schedule a Consultation
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
+                Schedule a Consultation
+                <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
               <Button
-                asChild
                 size="lg"
                 variant="outline"
                 className="border-zinc-700 text-zinc-300 hover:bg-zinc-800 hover:text-white"
+                render={<Link href="/practice-areas" />}
               >
-                <Link href="/practice-areas">Explore Practice Areas</Link>
+                Explore Practice Areas
               </Button>
             </div>
           </div>
