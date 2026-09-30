@@ -379,7 +379,6 @@ export default function ContactPage() {
                   >
                     <Phone className="mr-2 h-4 w-4" />
                     Call (212) 555-0900
-                    </a>
                   </Button>
                 </CardContent>
               </Card>
