@@ -234,5 +234,8 @@ export default function InsightsPage() {
   );
 }
 
-// Need CardContent
-import { CardContent } from "@/components/ui/card";
+  // Empty state for CardContent
+  return null;
+}
+
+// Need CardContent — already imported above
