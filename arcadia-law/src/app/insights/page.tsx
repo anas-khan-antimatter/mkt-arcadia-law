@@ -233,9 +233,3 @@ export default function InsightsPage() {
     </div>
   );
 }
-
-  // Empty state for CardContent
-  return null;
-}
-
-// Need CardContent — already imported above
