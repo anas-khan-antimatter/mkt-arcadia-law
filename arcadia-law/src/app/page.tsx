@@ -304,14 +304,12 @@ export default function Home() {
           </p>
           <div className="mt-8">
             <Button
-              asChild
               size="lg"
               className="bg-amber-600 hover:bg-amber-700 text-white"
+              render={<Link href="/contact" />}
             >
-              <Link href="/contact">
-                Schedule a Free Consultation
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
+              Schedule a Free Consultation
+              <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
           </div>
         </div>
