@@ -235,14 +235,12 @@ export default async function ArticlePage({
           </p>
           <div className="mt-6">
             <Button
-              asChild
               size="lg"
               className="bg-amber-600 hover:bg-amber-700 text-white"
+              render={<Link href="/contact" />}
             >
-              <Link href="/contact">
-                Schedule a Consultation
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
+              Schedule a Consultation
+              <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
           </div>
         </div>
