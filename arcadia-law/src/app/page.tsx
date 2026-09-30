@@ -1,145 +1,134 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import {
   ArrowRight,
+  Gavel,
+  FileText,
   Scale,
   Shield,
-  FileText,
   Building,
-  Gavel,
   Landmark,
+  Search,
+  Users,
+  TrendingUp,
+  CheckCircle2,
 } from "lucide-react";
 
 const practiceAreas = [
   {
     title: "Corporate Law",
-    description:
-      "Entity formation, governance, compliance, and strategic counsel for businesses at every stage.",
+    description: "Entity formation, governance, compliance, and strategic counsel for businesses at every stage.",
     icon: Building,
+    href: "/practice-areas#corporate",
   },
   {
     title: "Mergers & Acquisitions",
-    description:
-      "End-to-end M&A advisory from due diligence and valuation to negotiation and closing.",
-    icon: Scale,
+    description: "End-to-end M&A advisory — due diligence, valuation, negotiation, and closing.",
+    icon: TrendingUp,
+    href: "/practice-areas#ma",
   },
   {
     title: "Intellectual Property",
-    description:
-      "Patents, trademarks, copyrights, and trade secret protection in a rapidly evolving digital landscape.",
+    description: "Patents, trademarks, copyrights, and trade secret protection in the digital age.",
     icon: Shield,
+    href: "/practice-areas#ip",
   },
   {
     title: "Commercial Litigation",
-    description:
-      "Aggressive yet strategic representation in complex business disputes and regulatory proceedings.",
+    description: "Strategic dispute resolution in federal and state courts, arbitration, and regulatory proceedings.",
     icon: Gavel,
+    href: "/practice-areas#litigation",
   },
   {
     title: "Real Estate",
-    description:
-      "Commercial transactions, development, leasing, and land-use for developers and investors.",
+    description: "Commercial transactions, development, leasing, and land-use counsel.",
     icon: Landmark,
+    href: "/practice-areas#real-estate",
   },
   {
     title: "Employment & Labor",
-    description:
-      "Workplace policies, executive contracts, compliance, and dispute resolution for employers.",
+    description: "Workplace policy, executive contracts, compliance, and dispute resolution.",
     icon: FileText,
+    href: "/practice-areas#employment",
   },
 ];
 
-const stats = [
-  { label: "Years of Experience", value: "35+" },
-  { label: "Attorneys", value: "28" },
-  { label: "Cases Won", value: "98%" },
-  { label: "Clients Served", value: "1,200+" },
+const metrics = [
+  { label: "Years Experience", value: "35+" },
+  { label: "Attorneys on Staff", value: "28" },
+  { label: "Matters Closed (2024)", value: "470+" },
+  { label: "Client Retention Rate", value: "94%" },
 ];
 
-const testimonials = [
-  {
-    quote:
-      "Arcadia Law handled our cross-border acquisition with precision and cultural awareness that no other firm could match.",
-    author: "Sarah Chen",
-    role: "CEO, Meridian Global",
-  },
-  {
-    quote:
-      "When our IP portfolio needed urgent restructuring, Arcadia delivered a complete strategy in under three weeks.",
-    author: "James Mitchell",
-    role: "General Counsel, NovaTech",
-  },
-  {
-    quote:
-      "They don't just explain the law — they understand our business. That makes all the difference.",
-    author: "Priya Patel",
-    role: "Founder, Apex Ventures",
-  },
+const capabilities = [
+  "Direct partner engagement on every matter — no handoffs to junior associates",
+  "Transparent flat-fee and value-based billing structures",
+  "Same-day initial response to client inquiries",
+  "Cross-practice teams assembled for each client's specific needs",
+  "Secure client portal for document sharing and case updates",
+  "Multi-jurisdictional capability across all 50 states and 20+ countries",
 ];
 
 export default function Home() {
   return (
     <div className="flex flex-col">
-      {/* ─── Hero ─── */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-zinc-950 via-slate-900 to-zinc-900">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-amber-500/10 via-transparent to-transparent" />
-        <div className="container mx-auto px-4 py-24 md:px-6 md:py-32 lg:py-40 relative z-10">
+      {/* ─── HERO — data room seriousness ─── */}
+      <section className="relative overflow-hidden bg-[oklch(0.08_0.03_255)] scan-line">
+        <div className="absolute inset-0 grid-overlay opacity-40" />
+        <div className="absolute inset-0 bg-gradient-to-br from-accent/5 via-transparent to-transparent" />
+        <div className="container mx-auto px-4 py-28 md:px-6 md:py-36 lg:py-44 relative z-10">
           <div className="max-w-3xl">
             <Badge
               variant="outline"
-              className="mb-6 border-amber-600/40 bg-amber-600/10 text-amber-400 text-xs tracking-widest uppercase"
+              className="mb-6 border-accent/30 bg-accent/10 text-accent text-[11px] tracking-[0.2em] uppercase font-mono"
             >
-              Trusted Corporate Counsel
+              Corporate Counsel · Established 2002
             </Badge>
-            <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
-              Law that moves as{" "}
-              <span className="text-amber-500">fast as business</span>.
+            <h1 className="text-[clamp(2.25rem,5vw,4.5rem)] font-bold tracking-tight text-white leading-[1.05]">
+              Law that works{" "}
+              <span className="text-accent">on your terms</span>.
             </h1>
-            <p className="mt-6 max-w-xl text-lg text-zinc-400 leading-relaxed">
-              Arcadia Law is a modern corporate firm built for the pace of
-              today&apos;s economy. We combine sharp legal strategy with real
-              business instincts — no stuffiness, no delays, just results.
+            <p className="mt-6 max-w-2xl text-lg text-white/55 leading-relaxed font-mono text-[15px]">
+              Arcadia Law delivers precise corporate counsel without the
+              overhead of a traditional firm. Partner-led teams, transparent
+              pricing, and a relentless focus on outcomes.
             </p>
-            <div className="mt-8 flex flex-wrap gap-4">
+            <div className="mt-10 flex flex-wrap gap-4">
               <Button
                 size="lg"
-                className="bg-amber-600 hover:bg-amber-700 text-white"
-                render={<Link href="/contact" />}
+                className="bg-accent hover:bg-accent/90 text-accent-foreground shadow-lg shadow-accent/20"
+                render={<Link href="/intake" />}
               >
-                Schedule a Consultation
+                Start a Matter
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
               <Button
                 size="lg"
                 variant="outline"
-                className="border-zinc-700 text-zinc-300 hover:bg-zinc-800 hover:text-white"
+                className="border-white/15 text-white/70 hover:bg-white/5 hover:text-white"
                 render={<Link href="/practice-areas" />}
               >
-                Explore Practice Areas
+                Explore Practices
               </Button>
             </div>
           </div>
+          {/* Technical corner accent */}
+          <div className="absolute bottom-0 right-0 w-72 h-72 bg-accent/3 rounded-full blur-[100px]" />
         </div>
       </section>
 
-      {/* ─── Stats ─── */}
-      <section className="border-y border-border bg-muted/40">
-        <div className="container mx-auto px-4 py-12 md:px-6">
+      {/* ─── Metrics bar ─── */}
+      <section className="border-y border-border bg-[oklch(0.95_0.005_240)]">
+        <div className="container mx-auto px-4 py-10 md:px-6">
           <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
-            {stats.map((stat) => (
-              <div key={stat.label} className="text-center">
-                <p className="text-3xl font-bold text-foreground md:text-4xl">
-                  {stat.value}
+            {metrics.map((m) => (
+              <div key={m.label} className="text-center">
+                <p className="text-3xl font-bold text-primary md:text-4xl font-mono tabular-nums">
+                  {m.value}
                 </p>
-                <p className="mt-1 text-sm text-muted-foreground">
-                  {stat.label}
+                <p className="mt-1 text-sm text-muted-foreground font-mono text-[13px] uppercase tracking-wider">
+                  {m.label}
                 </p>
               </div>
             ))}
@@ -150,76 +139,69 @@ export default function Home() {
       {/* ─── Practice Areas ─── */}
       <section className="py-20 md:py-28">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="mb-12 text-center">
-            <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
-              Practice Areas
+          <div className="mb-14">
+            <Badge variant="outline" className="mb-4 border-accent/30 text-accent text-[11px] tracking-[0.2em] uppercase font-mono">
+              Core Practices
+            </Badge>
+            <h2 className="text-3xl font-bold tracking-tight md:text-4xl text-primary">
+              Full-spectrum corporate counsel
             </h2>
-            <p className="mt-3 text-lg text-muted-foreground max-w-2xl mx-auto">
-              Focused expertise across the full spectrum of corporate law. Each
-              practice is led by partners who are recognized leaders in their
-              field.
+            <p className="mt-3 text-base text-muted-foreground max-w-2xl font-mono text-[15px]">
+              Six practice groups, each led by a partner with deep industry knowledge.
             </p>
           </div>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-px bg-border md:grid-cols-3">
             {practiceAreas.map((area) => {
               const Icon = area.icon;
               return (
-                <Card
+                <Link
                   key={area.title}
-                  className="group transition-all hover:shadow-lg hover:border-amber-600/30"
+                  href={area.href}
+                  className="group relative bg-card p-8 transition-all hover:bg-accent/5"
                 >
-                  <CardHeader>
-                    <div className="mb-2 flex h-10 w-10 items-center justify-center rounded-lg bg-amber-600/10 text-amber-600">
-                      <Icon className="h-5 w-5" />
-                    </div>
-                    <CardTitle className="text-lg">{area.title}</CardTitle>
-                    <CardDescription className="text-sm">
-                      {area.description}
-                    </CardDescription>
-                  </CardHeader>
-                </Card>
+                  <div className="flex h-10 w-10 items-center justify-center rounded border border-border bg-muted text-accent group-hover:bg-accent/10 group-hover:border-accent/30 transition-all">
+                    <Icon className="h-5 w-5" />
+                  </div>
+                  <h3 className="mt-4 text-base font-semibold text-primary group-hover:text-accent transition-colors">
+                    {area.title}
+                  </h3>
+                  <p className="mt-2 text-sm text-muted-foreground leading-relaxed font-mono text-[13px]">
+                    {area.description}
+                  </p>
+                  <div className="mt-4 flex items-center gap-1 text-xs text-accent opacity-0 group-hover:opacity-100 transition-opacity font-mono uppercase tracking-wider">
+                    View Practice <ArrowRight className="h-3 w-3" />
+                  </div>
+                </Link>
               );
             })}
-          </div>
-          <div className="mt-10 text-center">
-            <Button variant="outline" render={<Link href="/practice-areas" />}>
-              View All Practice Areas
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Button>
           </div>
         </div>
       </section>
 
-      {/* ─── About / Differentiator ─── */}
-      <section className="bg-muted/30 py-20 md:py-28">
+      {/* ─── Differentiators ─── */}
+      <section className="bg-[oklch(0.12_0.03_255)] py-20 md:py-28 scan-line">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="grid items-center gap-12 md:grid-cols-2">
+          <div className="grid items-start gap-14 md:grid-cols-2">
             <div>
               <Badge
                 variant="outline"
-                className="mb-4 border-amber-600/30 text-amber-700 text-xs tracking-widest uppercase"
+                className="mb-4 border-accent/30 text-accent text-[11px] tracking-[0.2em] uppercase font-mono"
               >
-                Why Arcadia Law
+                How We Operate
               </Badge>
-              <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
-                Modern counsel for a <span className="text-amber-600">complex world</span>.
+              <h2 className="text-3xl font-bold tracking-tight text-white md:text-4xl">
+                Built for the way <span className="text-accent">business works</span>.
               </h2>
-              <p className="mt-4 text-muted-foreground leading-relaxed">
-                Traditional law firms move slowly. Arcadia Law was built
-                differently. Our lean team of senior attorneys uses modern
-                tools and clear communication to deliver exceptional results
-                on timelines that make sense for your business.
+              <p className="mt-4 text-white/55 leading-relaxed font-mono text-[15px]">
+                Traditional firms run on billable hours and leverage models.
+                Arcadia runs on outcomes, transparency, and direct access to
+                the attorneys who know your business.
               </p>
-              <ul className="mt-6 space-y-3">
-                {[
-                  "Direct partner access on every matter",
-                  "Transparent flat-fee and value billing",
-                  "Same-day responses to client inquiries",
-                  "Deep industry knowledge across tech, finance & real estate",
-                ].map((item) => (
+              <ul className="mt-8 space-y-3">
+                {capabilities.map((item) => (
                   <li key={item} className="flex items-start gap-3">
-                    <div className="mt-1 h-2 w-2 rounded-full bg-amber-600 shrink-0" />
-                    <span className="text-sm text-muted-foreground">
+                    <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-accent" />
+                    <span className="text-sm text-white/65 font-mono text-[13px]">
                       {item}
                     </span>
                   </li>
@@ -228,22 +210,30 @@ export default function Home() {
             </div>
             <div className="hidden md:block">
               <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-r from-amber-600/20 to-transparent rounded-2xl" />
-                <div className="rounded-2xl border border-border bg-card p-8">
-                  <p className="text-lg font-medium italic text-muted-foreground">
-                    &ldquo;At Arcadia, we don&apos;t just give legal advice —
-                    we help you make better business decisions. Every
-                    recommendation is grounded in commercial reality.&rdquo;
-                  </p>
-                  <div className="mt-6 flex items-center gap-3">
-                    <div className="h-10 w-10 rounded-full bg-amber-600/20 flex items-center justify-center text-amber-700 font-semibold text-sm">
+                <div className="absolute -inset-4 bg-accent/5 rounded-2xl blur-xl" />
+                <div className="relative rounded-xl border border-white/10 bg-white/5 p-8 backdrop-blur">
+                  <div className="flex items-center gap-3 mb-6 pb-4 border-b border-white/10">
+                    <div className="flex h-8 w-8 items-center justify-center rounded-full bg-accent text-xs font-bold text-accent-foreground">
                       AK
                     </div>
                     <div>
-                      <p className="text-sm font-medium">Aisha Khan</p>
-                      <p className="text-xs text-muted-foreground">
-                        Managing Partner, Arcadia Law
-                      </p>
+                      <p className="text-sm font-medium text-white">Aisha Khan</p>
+                      <p className="text-xs text-white/40 font-mono">Founder & Managing Partner</p>
+                    </div>
+                  </div>
+                  <p className="text-base text-white/70 leading-relaxed italic">
+                    &ldquo;At Arcadia, we don&apos;t just give legal advice — we
+                    help you make better business decisions. Every
+                    recommendation starts with a question: what does success
+                    look like for you?&rdquo;
+                  </p>
+                  <div className="mt-6 pt-4 border-t border-white/10">
+                    <div className="flex gap-2 text-xs text-white/30 font-mono">
+                      <span>Harvard Law</span>
+                      <span>·</span>
+                      <span>28 yrs experience</span>
+                      <span>·</span>
+                      <span>Chambers-ranked</span>
                     </div>
                   </div>
                 </div>
@@ -253,63 +243,102 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ─── Testimonials ─── */}
+      {/* ─── Toolset / Digital Services ─── */}
       <section className="py-20 md:py-28">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="mb-12 text-center">
-            <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
-              What Our Clients Say
+          <div className="mb-14 text-center">
+            <Badge variant="outline" className="mb-4 border-accent/30 text-accent text-[11px] tracking-[0.2em] uppercase font-mono">
+              Client Tools
+            </Badge>
+            <h2 className="text-3xl font-bold tracking-tight md:text-4xl text-primary">
+              Services designed for efficiency
             </h2>
-            <p className="mt-3 text-lg text-muted-foreground max-w-2xl mx-auto">
-              We&apos;re proud of the relationships we build and the results we
-              deliver.
+            <p className="mt-3 text-base text-muted-foreground max-w-xl mx-auto font-mono text-[15px]">
+              Digital tools that streamline intake, discovery, and case
+              management — no friction, no delays.
             </p>
           </div>
-          <div className="grid gap-8 md:grid-cols-3">
-            {testimonials.map((t) => (
-              <Card key={t.author} className="border-border/60">
-                <CardHeader>
-                  <div className="mb-2 text-amber-600">
-                    <svg
-                      className="h-6 w-6"
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-                    </svg>
-                  </div>
-                  <CardDescription className="text-sm leading-relaxed">
-                    {t.quote}
-                  </CardDescription>
-                  <div className="mt-4 pt-4 border-t border-border">
-                    <p className="text-sm font-medium">{t.author}</p>
-                    <p className="text-xs text-muted-foreground">{t.role}</p>
-                  </div>
-                </CardHeader>
-              </Card>
-            ))}
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="rounded-xl border border-border bg-card p-6">
+              <div className="flex h-10 w-10 items-center justify-center rounded border border-border bg-muted text-accent">
+                <Search className="h-5 w-5" />
+              </div>
+              <h3 className="mt-4 font-semibold">Attorney Match Quiz</h3>
+              <p className="mt-2 text-sm text-muted-foreground font-mono text-[13px]">
+                Answer 6 questions and we&apos;ll recommend the right practice team for your matter.
+              </p>
+              <Link
+                href="/attorney-match"
+                className="mt-4 inline-flex items-center gap-1 text-xs text-accent font-mono uppercase tracking-wider hover:text-accent/80 transition-colors"
+              >
+                Take the Quiz <ArrowRight className="h-3 w-3" />
+              </Link>
+            </div>
+            <div className="rounded-xl border border-border bg-card p-6">
+              <div className="flex h-10 w-10 items-center justify-center rounded border border-border bg-muted text-accent">
+                <FileText className="h-5 w-5" />
+              </div>
+              <h3 className="mt-4 font-semibold">Document Checklist Generator</h3>
+              <p className="mt-2 text-sm text-muted-foreground font-mono text-[13px]">
+                Generate a confidential document checklist tailored to your matter type — no login required.
+              </p>
+              <Link
+                href="/checklist"
+                className="mt-4 inline-flex items-center gap-1 text-xs text-accent font-mono uppercase tracking-wider hover:text-accent/80 transition-colors"
+              >
+                Generate Checklist <ArrowRight className="h-3 w-3" />
+              </Link>
+            </div>
+            <div className="rounded-xl border border-border bg-card p-6">
+              <div className="flex h-10 w-10 items-center justify-center rounded border border-border bg-muted text-accent">
+                <Users className="h-5 w-5" />
+              </div>
+              <h3 className="mt-4 font-semibold">Case Intake Wizard</h3>
+              <p className="mt-2 text-sm text-muted-foreground font-mono text-[13px]">
+                Confidential matter intake with intelligent branching based on practice area.
+              </p>
+              <Link
+                href="/intake"
+                className="mt-4 inline-flex items-center gap-1 text-xs text-accent font-mono uppercase tracking-wider hover:text-accent/80 transition-colors"
+              >
+                Start Intake <ArrowRight className="h-3 w-3" />
+              </Link>
+            </div>
           </div>
         </div>
       </section>
 
       {/* ─── CTA ─── */}
-      <section className="bg-gradient-to-r from-zinc-900 to-slate-900 py-20">
+      <section className="bg-primary py-20">
         <div className="container mx-auto px-4 text-center md:px-6">
+          <Badge
+            variant="outline"
+            className="mb-4 border-white/20 text-white/60 text-[11px] tracking-[0.2em] uppercase font-mono"
+          >
+            Ready to Proceed
+          </Badge>
           <h2 className="text-3xl font-bold tracking-tight text-white md:text-4xl">
-            Ready to work with a firm that moves at your speed?
+            Your matter. Your timeline. Our expertise.
           </h2>
-          <p className="mt-4 text-lg text-zinc-400 max-w-xl mx-auto">
-            Schedule a confidential consultation. No obligation. No
-            legalese. Just straight talk about your legal needs.
+          <p className="mt-4 text-base text-white/60 max-w-xl mx-auto font-mono text-[15px]">
+            Schedule a confidential consultation or begin your intake
+            online. We respond within one business day.
           </p>
-          <div className="mt-8">
+          <div className="mt-8 flex flex-wrap justify-center gap-4">
             <Button
               size="lg"
-              className="bg-amber-600 hover:bg-amber-700 text-white"
+              className="bg-accent hover:bg-accent/90 text-accent-foreground shadow-lg shadow-accent/20"
+              render={<Link href="/intake" />}
+            >
+              Begin Intake <ArrowRight className="ml-2 h-4 w-4" />
+            </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-white/20 text-white hover:bg-white/10"
               render={<Link href="/contact" />}
             >
-              Schedule a Free Consultation
-              <ArrowRight className="ml-2 h-4 w-4" />
+              Contact Us
             </Button>
           </div>
         </div>
