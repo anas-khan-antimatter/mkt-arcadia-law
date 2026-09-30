@@ -182,11 +182,9 @@ export default function Home() {
             })}
           </div>
           <div className="mt-10 text-center">
-            <Button asChild variant="outline">
-              <Link href="/practice-areas">
-                View All Practice Areas
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
+            <Button variant="outline" render={<Link href="/practice-areas" />}>
+              View All Practice Areas
+              <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
           </div>
         </div>
