@@ -39,8 +39,8 @@ export default function Header() {
               {link.label}
             </Link>
           ))}
-          <Button asChild className="bg-amber-600 hover:bg-amber-700 text-white">
-            <Link href="/contact">Free Consultation</Link>
+          <Button className="bg-amber-600 hover:bg-amber-700 text-white" render={<Link href="/contact" />}>
+            Free Consultation
           </Button>
         </nav>
 
@@ -64,9 +64,9 @@ export default function Header() {
                 </Link>
               ))}
               <div className="mt-4 px-3">
-                <Button asChild className="w-full bg-amber-600 hover:bg-amber-700 text-white">
-                  <Link href="/contact">Free Consultation</Link>
-                </Button>
+                <Button className="w-full bg-amber-600 hover:bg-amber-700 text-white" render={<Link href="/contact" />}>
+            Free Consultation
+          </Button>
               </div>
             </div>
           </SheetContent>
