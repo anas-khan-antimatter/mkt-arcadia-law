@@ -134,7 +134,7 @@ export default function PracticeAreasPage() {
       {/* Practice detail accordion */}
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4 md:px-6 max-w-4xl">
-          <Accordion type="single" collapsible className="space-y-4">
+          <Accordion className="space-y-4" defaultValue={[]}>
             {practices.map((practice) => {
               const Icon = practice.icon;
               return (
