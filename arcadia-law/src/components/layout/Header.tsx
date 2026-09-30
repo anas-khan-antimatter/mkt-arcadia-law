@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Menu, X, Scale } from "lucide-react";
+import { Menu, X, Gavel } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
@@ -12,6 +12,7 @@ const navLinks = [
   { label: "Attorneys", href: "/attorneys" },
   { label: "Insights", href: "/insights" },
   { label: "Case Results", href: "/case-results" },
+  { label: "Intake", href: "/intake" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -21,10 +22,12 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
-        <Link href="/" className="flex items-center gap-2">
-          <Scale className="h-6 w-6 text-amber-600" />
+        <Link href="/" className="flex items-center gap-2 group">
+          <div className="flex h-8 w-8 items-center justify-center rounded bg-primary text-primary-foreground transition-colors group-hover:bg-accent">
+            <Gavel className="h-4 w-4" />
+          </div>
           <span className="text-xl font-semibold tracking-tight">
-            Arcadia<span className="text-amber-600">Law</span>
+            Arcadia<span className="text-accent ml-0.5">Law</span>
           </span>
         </Link>
 
@@ -39,8 +42,8 @@ export default function Header() {
               {link.label}
             </Link>
           ))}
-          <Button className="bg-amber-600 hover:bg-amber-700 text-white" render={<Link href="/contact" />}>
-            Free Consultation
+          <Button className="bg-accent hover:bg-accent/90 text-accent-foreground shadow-sm" render={<Link href="/intake" />}>
+            Start a Matter
           </Button>
         </nav>
 
@@ -64,9 +67,9 @@ export default function Header() {
                 </Link>
               ))}
               <div className="mt-4 px-3">
-                <Button className="w-full bg-amber-600 hover:bg-amber-700 text-white" render={<Link href="/contact" />}>
-            Free Consultation
-          </Button>
+                <Button className="w-full bg-accent hover:bg-accent/90 text-accent-foreground shadow-sm" render={<Link href="/intake" />}>
+                  Start a Matter
+                </Button>
               </div>
             </div>
           </SheetContent>
