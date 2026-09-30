@@ -7,7 +7,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { ArrowRight, Mail, Phone } from "lucide-react";
+import { ArrowRight, Mail, Phone, Scale } from "lucide-react";
 import Link from "next/link";
 
 const attorneys = [
@@ -71,67 +71,62 @@ export default function AttorneysPage() {
   return (
     <div className="flex flex-col">
       {/* Hero */}
-      <section className="bg-gradient-to-br from-zinc-950 via-slate-900 to-zinc-900 py-16 md:py-24">
-        <div className="container mx-auto px-4 md:px-6">
-          <Badge className="mb-4 border-amber-600/40 bg-amber-600/10 text-amber-400 text-xs tracking-widest uppercase">
+      <section className="relative overflow-hidden bg-[oklch(0.08_0.03_255)] scan-line py-16 md:py-24">
+        <div className="absolute inset-0 grid-overlay opacity-30" />
+        <div className="container mx-auto px-4 md:px-6 relative z-10">
+          <Badge className="mb-4 border-accent/30 bg-accent/10 text-accent text-[11px] tracking-[0.2em] uppercase font-mono">
             Our Team
           </Badge>
           <h1 className="text-4xl font-bold tracking-tight text-white md:text-5xl">
             Attorneys
           </h1>
-          <p className="mt-4 max-w-xl text-lg text-zinc-400">
-            Every member of our team is a senior attorney with deep expertise
-            and a commitment to responsive, business-minded counsel. You
-            work directly with the person handling your matter.
+          <p className="mt-4 max-w-xl text-lg text-white/55 font-mono text-[15px]">
+            Every attorney at Arcadia Law is a leader in their field. We
+            maintain a deliberately small, partner-heavy team so that every
+            client receives direct access to senior counsel.
           </p>
         </div>
       </section>
 
-      {/* Team grid */}
+      {/* Team Grid */}
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {attorneys.map((attorney) => (
               <Card
                 key={attorney.name}
-                className="flex flex-col transition-all hover:shadow-lg"
+                className="border-border group hover:border-accent/30 transition-all"
               >
                 <CardHeader>
-                  <div className="mb-3 flex items-center gap-4">
-                    <div className="flex h-14 w-14 items-center justify-center rounded-full bg-amber-600/15 text-amber-700 font-bold text-lg">
+                  <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-xl bg-primary text-primary-foreground group-hover:bg-accent transition-colors">
+                    <span className="text-xl font-bold font-mono">
                       {attorney.initials}
-                    </div>
-                    <div>
-                      <CardTitle className="text-lg">
-                        {attorney.name}
-                      </CardTitle>
-                      <CardDescription className="text-sm">
-                        {attorney.role}
-                      </CardDescription>
-                    </div>
+                    </span>
                   </div>
+                  <CardTitle className="text-lg text-primary">
+                    {attorney.name}
+                  </CardTitle>
+                  <CardDescription className="font-mono text-[13px]">
+                    {attorney.role}
+                  </CardDescription>
                   <Badge
-                    variant="secondary"
-                    className="w-fit text-xs font-medium"
+                    variant="outline"
+                    className="w-fit mt-1 border-accent/20 text-accent text-[10px] tracking-[0.15em] uppercase font-mono"
                   >
                     {attorney.practice}
                   </Badge>
                 </CardHeader>
-                <CardContent className="flex-1 flex flex-col">
-                  <p className="text-sm text-muted-foreground leading-relaxed flex-1">
+                <CardContent className="space-y-4">
+                  <p className="text-sm text-muted-foreground leading-relaxed font-mono text-[13px]">
                     {attorney.bio}
                   </p>
-                  <div className="mt-4 pt-4 border-t border-border space-y-1">
-                    <p className="text-xs text-muted-foreground">
-                      <span className="font-medium text-foreground">
-                        Education:
-                      </span>{" "}
+                  <div className="border-t border-border pt-3 space-y-1.5">
+                    <p className="text-xs text-muted-foreground font-mono">
+                      <span className="text-primary font-semibold">Education: </span>
                       {attorney.education}
                     </p>
-                    <p className="text-xs text-muted-foreground">
-                      <span className="font-medium text-foreground">
-                        Admissions:
-                      </span>{" "}
+                    <p className="text-xs text-muted-foreground font-mono">
+                      <span className="text-primary font-semibold">Admissions: </span>
                       {attorney.admissions}
                     </p>
                   </div>
@@ -143,23 +138,31 @@ export default function AttorneysPage() {
       </section>
 
       {/* CTA */}
-      <section className="bg-muted/30 py-16">
+      <section className="bg-[oklch(0.12_0.03_255)] py-16">
         <div className="container mx-auto px-4 text-center md:px-6">
-          <h2 className="text-2xl font-bold tracking-tight md:text-3xl">
-            Find the right attorney for your matter
+          <h2 className="text-2xl font-bold tracking-tight text-white md:text-3xl">
+            Not sure who to contact?
           </h2>
-          <p className="mt-3 text-muted-foreground max-w-lg mx-auto">
-            Tell us about your legal need and we&apos;ll connect you with the
-            best person on our team.
+          <p className="mt-3 text-white/55 max-w-lg mx-auto font-mono text-[15px]">
+            Take our attorney match quiz and we&apos;ll recommend the right
+            team for your specific legal matter.
           </p>
-          <div className="mt-6">
+          <div className="mt-6 flex flex-wrap justify-center gap-4">
             <Button
               size="lg"
-              className="bg-amber-600 hover:bg-amber-700 text-white"
-              render={<Link href="/contact" />}
+              className="bg-accent hover:bg-accent/90 text-accent-foreground shadow-lg"
+              render={<Link href="/attorney-match" />}
             >
-              Get Matched With an Attorney
+              Take the Match Quiz
               <ArrowRight className="ml-2 h-4 w-4" />
+            </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-white/20 text-white/70 hover:text-white hover:bg-white/5"
+              render={<Link href="/intake" />}
+            >
+              Begin Matter Intake
             </Button>
           </div>
         </div>
