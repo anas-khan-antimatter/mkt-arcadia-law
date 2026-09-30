@@ -12,6 +12,8 @@ const navLinks = [
   { label: "Attorneys", href: "/attorneys" },
   { label: "Insights", href: "/insights" },
   { label: "Case Results", href: "/case-results" },
+  { label: "Intake", href: "/intake" },
+  { label: "Match Quiz", href: "/match" },
   { label: "Contact", href: "/contact" },
 ];
 
