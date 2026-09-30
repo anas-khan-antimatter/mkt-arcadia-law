@@ -180,12 +180,11 @@ export default function InsightsPage() {
           </p>
           <div className="mt-6">
             <Button
-              asChild
               size="lg"
               className="bg-amber-600 hover:bg-amber-700 text-white"
+              render={<Link href="/contact" />}
             >
-              <Link href="/contact">
-                Subscribe to Our Newsletter
+              Subscribe to Our Newsletter
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
