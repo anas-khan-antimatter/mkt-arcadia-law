@@ -1,9 +1,9 @@
 # Workspace Map — c-1790732954718-w4dlf
-_Generated 2026-09-30 · 45 files · 14 directories_  
+_Generated 2026-10-02 · 51 files · 20 directories_  
 _Deterministic structural map. Regenerate with the `map` tool or "Antimatter: Map Workspace". Do not hand-edit._
 
 ## Languages
-- TypeScript: 20
+- TypeScript: 26
 - Markdown: 9
 - JSON: 5
 - JavaScript: 2
@@ -29,10 +29,28 @@ _Deterministic structural map. Regenerate with the `map` tool or "Antimatter: Ma
 - symbols: metadata (const)
 - files: favicon.ico, globals.css, layout.tsx, page.tsx
 
+### `arcadia-law/src/app/api/conflicts` — 1 file
+- symbols: POST (fn)
+- files: route.ts
+
+### `arcadia-law/src/app/api/intake` — 1 file
+- symbols: POST (fn)
+- files: route.ts
+
+### `arcadia-law/src/app/api/match` — 1 file
+- symbols: POST (fn)
+- files: route.ts
+
+### `arcadia-law/src/app/attorney-match` — 1 file
+- files: page.tsx
+
 ### `arcadia-law/src/app/attorneys` — 1 file
 - files: page.tsx
 
 ### `arcadia-law/src/app/case-results` — 1 file
+- files: page.tsx
+
+### `arcadia-law/src/app/checklist` — 1 file
 - files: page.tsx
 
 ### `arcadia-law/src/app/contact` — 1 file
@@ -42,6 +60,9 @@ _Deterministic structural map. Regenerate with the `map` tool or "Antimatter: Ma
 - files: page.tsx
 
 ### `arcadia-law/src/app/insights/[slug]` — 1 file
+- files: page.tsx
+
+### `arcadia-law/src/app/intake` — 1 file
 - files: page.tsx
 
 ### `arcadia-law/src/app/practice-areas` — 1 file

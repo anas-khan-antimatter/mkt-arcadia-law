@@ -1,14 +1,14 @@
 {
   "root": "/tmp/am-ws/c-1790732954718-w4dlf",
   "name": "c-1790732954718-w4dlf",
-  "generatedAt": "2026-09-30T17:50:22.334Z",
-  "fileCount": 45,
-  "dirCount": 14,
+  "generatedAt": "2026-10-02T22:08:40.992Z",
+  "fileCount": 51,
+  "dirCount": 20,
   "languages": {
     "Markdown": 9,
     "JSON": 5,
     "JavaScript": 2,
-    "TypeScript": 20,
+    "TypeScript": 26,
     "CSS": 1
   },
   "keyFiles": [
@@ -84,6 +84,53 @@
       ]
     },
     {
+      "dir": "arcadia-law/src/app/api/conflicts",
+      "fileCount": 1,
+      "files": [
+        "route.ts"
+      ],
+      "symbols": [
+        {
+          "name": "POST",
+          "kind": "fn"
+        }
+      ]
+    },
+    {
+      "dir": "arcadia-law/src/app/api/intake",
+      "fileCount": 1,
+      "files": [
+        "route.ts"
+      ],
+      "symbols": [
+        {
+          "name": "POST",
+          "kind": "fn"
+        }
+      ]
+    },
+    {
+      "dir": "arcadia-law/src/app/api/match",
+      "fileCount": 1,
+      "files": [
+        "route.ts"
+      ],
+      "symbols": [
+        {
+          "name": "POST",
+          "kind": "fn"
+        }
+      ]
+    },
+    {
+      "dir": "arcadia-law/src/app/attorney-match",
+      "fileCount": 1,
+      "files": [
+        "page.tsx"
+      ],
+      "symbols": []
+    },
+    {
       "dir": "arcadia-law/src/app/attorneys",
       "fileCount": 1,
       "files": [
@@ -93,6 +140,14 @@
     },
     {
       "dir": "arcadia-law/src/app/case-results",
+      "fileCount": 1,
+      "files": [
+        "page.tsx"
+      ],
+      "symbols": []
+    },
+    {
+      "dir": "arcadia-law/src/app/checklist",
       "fileCount": 1,
       "files": [
         "page.tsx"
@@ -117,6 +172,14 @@
     },
     {
       "dir": "arcadia-law/src/app/insights/[slug]",
+      "fileCount": 1,
+      "files": [
+        "page.tsx"
+      ],
+      "symbols": []
+    },
+    {
+      "dir": "arcadia-law/src/app/intake",
       "fileCount": 1,
       "files": [
         "page.tsx"
